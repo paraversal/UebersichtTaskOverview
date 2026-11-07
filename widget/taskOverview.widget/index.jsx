@@ -30,7 +30,7 @@ const THEME = {
 const PROTOCOL_VERSION = 1
 const LEAVE_MS = 320
 const RETRY_MIN_MS = 1000
-const RETRY_MAX_MS = 15000
+const RETRY_MAX_MS = 2000 // localhost: retrying is cheap, and a fresh server shouldn't miss quick jobs
 const TICK_MS = 1000 // keeps "closing in 5s" / "stale for 3m" current
 
 export const refreshFrequency = false
