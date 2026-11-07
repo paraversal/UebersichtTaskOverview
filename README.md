@@ -4,20 +4,7 @@ Progress cards for long-running jobs on your macOS desktop. TaskOverview is an
 [Übersicht](https://tracesof.net/uebersicht/) widget, and your scripts feed it through
 the `taskoverview-notifier` Python package.
 
-```
-┌──────────────────────────────────────┐
-│ Downloading                          │
-│ model.bin · 1.2 GB                   │
-│ ████████████░░░░░░░░░░░░░░░░░░░░░░░  │
-└──────────────────────────────────────┘
-┌──────────────────────────────────────┐
-│ Training run                 [Stale] │
-│ epoch 3/10                           │
-│ ███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
-│ Process disconnected 2m ago          │
-│                   [Refresh] [Dismiss]│
-└──────────────────────────────────────┘
-```
+<img src="docs/screenshot.png" alt="TaskOverview widget showing two running jobs and one stale job" width="370">
 
 | Folder                      | What it is                                           |
 |-----------------------------|------------------------------------------------------|
