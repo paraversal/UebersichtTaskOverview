@@ -46,4 +46,4 @@ jobs:
           version=$(uv run --no-project python -c "import re;print(re.search(r'__version__ = \"(.+)\"', open('src/taskoverview_notifier/__init__.py').read())[1])")
           test "py-v$version" = "${GITHUB_REF_NAME}" || { echo "Tag ${GITHUB_REF_NAME} != py-v$version"; exit 1; }
       - run: uv build
-      - run: uv publish --trusted-publishing always
+      - run: uv publish
