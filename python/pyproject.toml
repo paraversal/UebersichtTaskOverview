@@ -1,0 +1,68 @@
+[project]
+name = "taskoverview-notifier"
+dynamic = ["version"]
+description = "Show progress cards for long-running Python jobs on your macOS desktop via the TaskOverview Übersicht widget."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [
+    { name = "paraversal", email = "104731964+paraversal@users.noreply.github.com" },
+]
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "websockets>=14.0",
+]
+keywords = ["ubersicht", "uebersicht", "progress", "notifications", "macos", "widget"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: MacOS X",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/paraversal/UebersichtTaskOverview"
+Issues = "https://github.com/paraversal/UebersichtTaskOverview/issues"
+Protocol = "https://github.com/paraversal/UebersichtTaskOverview/blob/main/PROTOCOL.md"
+
+[project.scripts]
+taskoverview-server = "taskoverview_notifier.server:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/taskoverview_notifier/__init__.py"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]
+
+[tool.mypy]
+strict = true
+files = ["src"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ASYNC109", "ASYNC110"]

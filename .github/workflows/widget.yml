@@ -1,0 +1,21 @@
+name: Widget release
+
+on:
+  push:
+    tags: ["widget-v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip widget
+        working-directory: widget
+        run: zip -r ../taskOverview.widget.zip taskOverview.widget -x '*.DS_Store'
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" taskOverview.widget.zip --title "Widget ${GITHUB_REF_NAME#widget-v}" --generate-notes
