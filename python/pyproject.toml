@@ -49,6 +49,11 @@ build-backend = "hatchling.build"
 [tool.hatch.version]
 path = "src/taskoverview_notifier/__init__.py"
 
+# The distribution name no longer matches the import package, so hatchling's
+# default src-layout detection cannot infer what to ship.
+[tool.hatch.build.targets.wheel]
+packages = ["src/taskoverview_notifier"]
+
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
