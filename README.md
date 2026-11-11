@@ -2,14 +2,14 @@
 
 Progress cards for long-running jobs on your macOS desktop. Job Overview is an
 [Übersicht](https://tracesof.net/uebersicht/) widget, and your scripts feed it through
-the `taskoverview-notifier` Python package.
+the `uebersicht-job-overview-notifier` Python package.
 
 <img src="docs/screenshot.png" alt="Job Overview widget showing two running jobs and one stale job" width="370">
 
 | Folder                      | What it is                                           |
 |-----------------------------|------------------------------------------------------|
 | `widget/job-overview.widget` | The Übersicht widget                                 |
-| `python/`                   | [`taskoverview-notifier`](python/README.md) on PyPI: client library and local server |
+| `python/`                   | [`uebersicht-job-overview-notifier`](python/README.md) on PyPI: client library and local server |
 | `PROTOCOL.md`               | The WebSocket protocol both sides speak              |
 
 ## Install
@@ -20,7 +20,7 @@ the `taskoverview-notifier` Python package.
 2. **Python package:**
 
    ```bash
-   pip install taskoverview-notifier
+   pip install uebersicht-job-overview-notifier
    ```
 
 3. Use it:

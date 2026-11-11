@@ -1,0 +1,16 @@
+[project]
+name = "taskoverview-notifier"
+version = "1.0.1"
+description = "Renamed to uebersicht-job-overview-notifier — this is a forwarding package."
+requires-python = ">=3.11"
+dependencies = ["uebersicht-job-overview-notifier>=1.1.0"]
+
+[project.urls]
+Homepage = "https://github.com/paraversal/uebersicht-job-overview"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+bypass-selection = true

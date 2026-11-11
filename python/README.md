@@ -1,10 +1,10 @@
-# taskoverview-notifier
+# uebersicht-job-overview-notifier
 
 Show progress cards for long-running Python jobs on your macOS desktop, using the
 [Job Overview](https://github.com/paraversal/uebersicht-job-overview) Übersicht widget.
 
 ```bash
-pip install taskoverview-notifier
+pip install uebersicht-job-overview-notifier
 ```
 
 You also need [Übersicht](https://tracesof.net/uebersicht/) and the Job Overview widget

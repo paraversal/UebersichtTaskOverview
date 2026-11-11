@@ -1,5 +1,5 @@
 [project]
-name = "taskoverview-notifier"
+name = "uebersicht-job-overview-notifier"
 dynamic = ["version"]
 description = "Show progress cards for long-running Python jobs on your macOS desktop via the Job Overview Übersicht widget."
 readme = "README.md"
@@ -32,6 +32,7 @@ Protocol = "https://github.com/paraversal/uebersicht-job-overview/blob/main/PROT
 
 [project.scripts]
 taskoverview-server = "taskoverview_notifier.server:main"
+job-overview-server = "taskoverview_notifier.server:main"
 
 [dependency-groups]
 dev = [
