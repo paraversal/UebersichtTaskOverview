@@ -1,7 +1,7 @@
 [project]
 name = "taskoverview-notifier"
 dynamic = ["version"]
-description = "Show progress cards for long-running Python jobs on your macOS desktop via the TaskOverview Übersicht widget."
+description = "Show progress cards for long-running Python jobs on your macOS desktop via the Job Overview Übersicht widget."
 readme = "README.md"
 license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
@@ -26,9 +26,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/paraversal/UebersichtTaskOverview"
-Issues = "https://github.com/paraversal/UebersichtTaskOverview/issues"
-Protocol = "https://github.com/paraversal/UebersichtTaskOverview/blob/main/PROTOCOL.md"
+Homepage = "https://github.com/paraversal/uebersicht-job-overview"
+Issues = "https://github.com/paraversal/uebersicht-job-overview/issues"
+Protocol = "https://github.com/paraversal/uebersicht-job-overview/blob/main/PROTOCOL.md"
 
 [project.scripts]
 taskoverview-server = "taskoverview_notifier.server:main"

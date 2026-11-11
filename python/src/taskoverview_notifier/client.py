@@ -1,4 +1,4 @@
-"""Producer clients: report jobs to the TaskOverview widget.
+"""Producer clients: report jobs to the Job Overview widget.
 
 ``Notifier`` is the asyncio client and ``SyncNotifier`` is the blocking one. Both keep one
 persistent connection, reconnect automatically, and re-send their open jobs after a
@@ -116,7 +116,7 @@ class _NotifierBase:
         # Best effort: never crash the caller's script because the display is unreachable.
         # Open jobs (with their latest state) and pending ends are replayed on reconnect.
         if error is not None:
-            logger.warning("TaskOverview server unreachable (%s); retrying in the background", error)
+            logger.warning("Job Overview server unreachable (%s); retrying in the background", error)
         else:
             logger.debug("Reconnecting; %s will be replayed later", msg["type"])
 
@@ -152,7 +152,7 @@ class _NotifierBase:
         except ValueError:
             return
         if msg.get("type") == "error":
-            logger.warning("TaskOverview server rejected a message: %s", msg.get("message"))
+            logger.warning("Job Overview server rejected a message: %s", msg.get("message"))
 
 
 # --- asyncio ------------------------------------------------------------------
@@ -241,14 +241,14 @@ class Notifier(_NotifierBase):
             return
         # The server went away: reconnect in the background (restarting it if we may),
         # so the cards come back even if this script never sends another update.
-        logger.warning("Lost connection to TaskOverview server, reconnecting")
+        logger.warning("Lost connection to Job Overview server, reconnecting")
         self._reconnecting = True
         delay = RECONNECT_MIN
         try:
             while not self._closed:
                 try:
                     await self._ensure_connected()
-                    logger.info("Reconnected to TaskOverview server")
+                    logger.info("Reconnected to Job Overview server")
                     return
                 except _CONNECTION_ERRORS as e:
                     logger.debug("Reconnect failed: %s", e)
@@ -415,14 +415,14 @@ class SyncNotifier(_NotifierBase):
                 self._log_server_message(raw)
         if self._closed or self._ws is not ws:
             return
-        logger.warning("Lost connection to TaskOverview server, reconnecting")
+        logger.warning("Lost connection to Job Overview server, reconnecting")
         self._reconnecting = True
         delay = RECONNECT_MIN
         try:
             while not self._closed:
                 try:
                     self._ensure_connected()
-                    logger.info("Reconnected to TaskOverview server")
+                    logger.info("Reconnected to Job Overview server")
                     return
                 except _CONNECTION_ERRORS as e:
                     logger.debug("Reconnect failed: %s", e)

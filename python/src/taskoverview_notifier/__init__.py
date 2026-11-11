@@ -1,4 +1,4 @@
-"""Report progress of long-running jobs to the TaskOverview Übersicht widget."""
+"""Report progress of long-running jobs to the Job Overview Übersicht widget."""
 
 from ._spawn import ServerUnavailable
 from .client import Job, Notifier, SyncJob, SyncNotifier

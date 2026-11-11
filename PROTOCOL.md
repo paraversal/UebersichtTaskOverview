@@ -1,4 +1,4 @@
-# TaskOverview protocol (v1)
+# Job Overview protocol (v1)
 
 All traffic goes over a single WebSocket server (default `ws://localhost:6789`).
 Every message is a JSON object with a `type` field.

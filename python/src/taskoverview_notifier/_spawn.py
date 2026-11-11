@@ -43,7 +43,7 @@ def ensure_server(host: str, port: int, timeout: float = 5.0) -> None:
         return
 
     log_path = server_log_path()
-    logger.info("No TaskOverview server on %s:%d, starting one (log: %s)", host, port, log_path)
+    logger.info("No Job Overview server on %s:%d, starting one (log: %s)", host, port, log_path)
     with open(log_path, "ab") as log:
         subprocess.Popen(
             [

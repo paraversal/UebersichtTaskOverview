@@ -1,4 +1,4 @@
-"""TaskOverview relay server.
+"""Job Overview relay server.
 
 Keeps the list of jobs, pushes it to every connected widget, and marks jobs stale
 when the producer that owns them disappears or stops sending updates.

@@ -1,4 +1,4 @@
-"""Wire messages for the TaskOverview protocol. See PROTOCOL.md in the repository root."""
+"""Wire messages for the Job Overview protocol. See PROTOCOL.md in the repository root."""
 
 from __future__ import annotations
 

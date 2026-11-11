@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Zip widget
         working-directory: widget
-        run: zip -r ../taskOverview.widget.zip taskOverview.widget -x '*.DS_Store'
+        run: zip -r ../job-overview.widget.zip job-overview.widget -x '*.DS_Store'
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" taskOverview.widget.zip --title "Widget ${GITHUB_REF_NAME#widget-v}" --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" job-overview.widget.zip --title "Widget ${GITHUB_REF_NAME#widget-v}" --generate-notes

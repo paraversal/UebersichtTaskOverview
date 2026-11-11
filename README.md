@@ -1,21 +1,21 @@
-# TaskOverview
+# Job Overview
 
-Progress cards for long-running jobs on your macOS desktop. TaskOverview is an
+Progress cards for long-running jobs on your macOS desktop. Job Overview is an
 [Übersicht](https://tracesof.net/uebersicht/) widget, and your scripts feed it through
 the `taskoverview-notifier` Python package.
 
-<img src="docs/screenshot.png" alt="TaskOverview widget showing two running jobs and one stale job" width="370">
+<img src="docs/screenshot.png" alt="Job Overview widget showing two running jobs and one stale job" width="370">
 
 | Folder                      | What it is                                           |
 |-----------------------------|------------------------------------------------------|
-| `widget/taskOverview.widget` | The Übersicht widget                                 |
+| `widget/job-overview.widget` | The Übersicht widget                                 |
 | `python/`                   | [`taskoverview-notifier`](python/README.md) on PyPI: client library and local server |
 | `PROTOCOL.md`               | The WebSocket protocol both sides speak              |
 
 ## Install
 
-1. **Widget:** download `taskOverview.widget.zip` from the
-   [latest release](https://github.com/paraversal/UebersichtTaskOverview/releases/latest)
+1. **Widget:** download `job-overview.widget.zip` from the
+   [latest release](https://github.com/paraversal/uebersicht-job-overview/releases/latest)
    and unzip it into your Übersicht widgets folder (Übersicht menu → *Open Widgets Folder*).
 2. **Python package:**
 
@@ -54,14 +54,14 @@ See the [Python README](python/README.md#stale-jobs) for exactly how staleness i
 
 ## Configuration
 
-Settings are at the top of `widget/taskOverview.widget/index.jsx`: server URL,
+Settings are at the top of `widget/job-overview.widget/index.jsx`: server URL,
 position, card width, spacing and the colour theme (Gruvbox dark by default).
 
 ## Development
 
 ```bash
 # widget: symlink the repo copy into Übersicht
-ln -s "$PWD/widget/taskOverview.widget" "$HOME/Library/Application Support/Übersicht/widgets/taskOverview.widget"
+ln -s "$PWD/widget/job-overview.widget" "$HOME/Library/Application Support/Übersicht/widgets/job-overview.widget"
 
 # python
 cd python
@@ -76,7 +76,7 @@ uv run taskoverview-server --log-level DEBUG   # run the server in the foregroun
 - **Python:** bump `__version__` in `python/src/taskoverview_notifier/__init__.py` and
   push a tag `py-v<version>`. CI builds the package and publishes it to PyPI through
   trusted publishing.
-- **Widget:** push a tag `widget-v<version>`. CI attaches `taskOverview.widget.zip` to a
+- **Widget:** push a tag `widget-v<version>`. CI attaches `job-overview.widget.zip` to a
   GitHub release.
 
 ## License

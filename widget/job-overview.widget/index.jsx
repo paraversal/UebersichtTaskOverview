@@ -41,7 +41,7 @@ export const className = `
 `
 
 // Shared across hot reloads of this file, so an old socket never lingers.
-const runtime = (window.__taskOverview = window.__taskOverview || {})
+const runtime = (window.__jobOverview = window.__jobOverview || {})
 
 const send = (msg) => {
   const ws = runtime.socket
@@ -80,7 +80,7 @@ const connect = () => {
     try {
       msg = JSON.parse(event.data)
     } catch (e) {
-      console.error('taskOverview: unparseable message', event.data)
+      console.error('jobOverview: unparseable message', event.data)
       return
     }
     switch (msg.type) {
@@ -97,10 +97,10 @@ const connect = () => {
         else finish(msg.id)
         break
       case 'error':
-        console.error('taskOverview server error:', msg.message)
+        console.error('jobOverview server error:', msg.message)
         break
       default:
-        console.warn('taskOverview: unknown message', msg)
+        console.warn('jobOverview: unknown message', msg)
     }
   }
 

@@ -1,13 +1,13 @@
 # taskoverview-notifier
 
 Show progress cards for long-running Python jobs on your macOS desktop, using the
-[TaskOverview](https://github.com/paraversal/UebersichtTaskOverview) Übersicht widget.
+[Job Overview](https://github.com/paraversal/uebersicht-job-overview) Übersicht widget.
 
 ```bash
 pip install taskoverview-notifier
 ```
 
-You also need [Übersicht](https://tracesof.net/uebersicht/) and the TaskOverview widget
+You also need [Übersicht](https://tracesof.net/uebersicht/) and the Job Overview widget
 (see the main repository's README).
 
 ## Usage
@@ -72,4 +72,4 @@ To keep it running permanently instead, run `taskoverview-server`, for example a
 launchd agent. Use `taskoverview-server --help` to see the options.
 
 The wire protocol is documented in
-[PROTOCOL.md](https://github.com/paraversal/UebersichtTaskOverview/blob/main/PROTOCOL.md).
+[PROTOCOL.md](https://github.com/paraversal/uebersicht-job-overview/blob/main/PROTOCOL.md).
